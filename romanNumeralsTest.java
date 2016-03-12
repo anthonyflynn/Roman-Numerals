@@ -11,6 +11,7 @@ public class romanNumeralsTest {
 	private romanNumeral test;
 	private ByteArrayInputStream in;
 	
+	//Unit tests for function input()
 	@Test
 	public void testInput0() {
 		in = new ByteArrayInputStream("0".getBytes());
@@ -136,6 +137,8 @@ public class romanNumeralsTest {
 		assertFalse(valid);
 	}
 	
+	//Unit tests for function getOnes()
+	
 	@Test
 	public void testOnes0() {
 		int inputValue = 0;
@@ -215,6 +218,8 @@ public class romanNumeralsTest {
 		String outputValue = test.getOnes(inputValue);
 		assertEquals("IX", outputValue);
 	}
+	
+	//Unit tests for function getTens()
 	
 	@Test
 	public void testTens0() {
@@ -296,7 +301,125 @@ public class romanNumeralsTest {
 		assertEquals("XC", outputValue);
 	}
 	
+	//Unit tests for function getHundreds()
+	
+	@Test
+	public void testHundreds0() {
+		int inputValue = 0;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getHundreds(inputValue);
+		assertEquals("", outputValue);
+	}
+		
+	@Test
+	public void testHundreds1() {
+		int inputValue = 1;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getHundreds(inputValue);
+		assertEquals("C", outputValue);
+	}
+	
+	@Test
+	public void testHundreds2() {
+		int inputValue = 2;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getHundreds(inputValue);
+		assertEquals("CC", outputValue);
+	}
+	
+	@Test
+	public void testHundreds3() {
+		int inputValue = 3;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getHundreds(inputValue);
+		assertEquals("CCC", outputValue);
+	}
+	
+	@Test
+	public void testHundreds4() {
+		int inputValue = 4;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getHundreds(inputValue);
+		assertEquals("CD", outputValue);
+	}
+	
+	@Test
+	public void testHundreds5() {
+		int inputValue = 5;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getHundreds(inputValue);
+		assertEquals("D", outputValue);
+	}
+	
+	@Test
+	public void testHundreds6() {
+		int inputValue = 6;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getHundreds(inputValue);
+		assertEquals("DC", outputValue);
+	}
+	
+	@Test
+	public void testHundreds7() {
+		int inputValue = 7;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getHundreds(inputValue);
+		assertEquals("DCC", outputValue);
+	}
+	
+	@Test
+	public void testHundreds8() {
+		int inputValue = 8;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getHundreds(inputValue);
+		assertEquals("DCCC", outputValue);
+	}
+	
+	@Test
+	public void testHundreds9() {
+		int inputValue = 9;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getHundreds(inputValue);
+		assertEquals("CM", outputValue);
+	}
+
+	//Unit tests for function getHundreds()
+	
+	@Test
+	public void testThousands0() {
+		int inputValue = 0;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getThousands(inputValue);
+		assertEquals("", outputValue);
+	}
+			
+	@Test
+	public void testThousands1() {
+		int inputValue = 1;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getThousands(inputValue);
+		assertEquals("M", outputValue);
+	}
+			
+	@Test
+	public void testThousands2() {
+		int inputValue = 2;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getThousands(inputValue);
+		assertEquals("MM", outputValue);
+	}
+			
+	@Test
+	public void testThousands3() {
+		int inputValue = 3;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getThousands(inputValue);
+		assertEquals("MMM", outputValue);
+	}
+		
+		
 	//Tests for full number converter function:
+	
 	@Test
 	public void testRomanNumeralEquivalent1() {
 		int inputValue = 1;

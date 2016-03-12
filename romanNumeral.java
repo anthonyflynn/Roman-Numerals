@@ -80,7 +80,7 @@ public class romanNumeral {
 		case 8: return "VIII";
 		case 9:	return "IX";
 		default:
-			out.println("Error in tens function.  Exiting.");
+			out.println("Error in ones function.  Exiting.");
 			System.exit(-1);
 			return "";
 		}
@@ -105,5 +105,34 @@ public class romanNumeral {
 			return "";
 		}
 	}
+	
+	/* Function to return the value in the hundred units column of input*/
+	public String getHundreds(int inputValue) {
+		switch(inputValue) {
+		case 0: return "";
+		case 1: return "C";
+		case 2:	return "CC";
+		case 3:	return "CCC";
+		case 4:	return "CD";
+		case 5: return "D";
+		case 6: return "DC";
+		case 7: return "DCC";
+		case 8: return "DCCC";
+		case 9:	return "CM";
+		default:
+			out.println("Error in hundreds function.  Exiting.");
+			System.exit(-1);
+			return "";
+		}
+	}
+	
+	public String getThousands(int inputValue) {
+		String thousandsString = "";
+		for(int i = 0; i < inputValue; i++) {
+			thousandsString += "M";
+		}
+		return thousandsString;
+	}
+
 
 }
