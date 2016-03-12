@@ -137,85 +137,84 @@ public class romanNumeralsTest {
 	}
 	
 	@Test
-	public void testTens0() {
+	public void testOnes0() {
 		int inputValue = 0;
 		test = new romanNumeral(System.in, System.out);
-		String outputValue = test.getTens(inputValue);
+		String outputValue = test.getOnes(inputValue);
 		assertEquals("", outputValue);
 	}
 	
 	@Test
-	public void testTens1() {
+	public void testOnes1() {
 		int inputValue = 1;
 		test = new romanNumeral(System.in, System.out);
-		String outputValue = test.getTens(inputValue);
+		String outputValue = test.getOnes(inputValue);
 		assertEquals("I", outputValue);
 	}
 	
 	@Test
-	public void testTens2() {
+	public void testOnes2() {
 		int inputValue = 2;
 		test = new romanNumeral(System.in, System.out);
-		String outputValue = test.getTens(inputValue);
+		String outputValue = test.getOnes(inputValue);
 		assertEquals("II", outputValue);
 	}
 	
 	@Test
-	public void testTens3() {
+	public void testOnes3() {
 		int inputValue = 3;
 		test = new romanNumeral(System.in, System.out);
-		String outputValue = test.getTens(inputValue);
+		String outputValue = test.getOnes(inputValue);
 		assertEquals("III", outputValue);
 	}
 	
 	@Test
-	public void testTens4() {
+	public void testOnes4() {
 		int inputValue = 4;
 		test = new romanNumeral(System.in, System.out);
-		String outputValue = test.getTens(inputValue);
+		String outputValue = test.getOnes(inputValue);
 		assertEquals("IV", outputValue);
 	}
 	
 	@Test
-	public void testTens5() {
+	public void testOnes5() {
 		int inputValue = 5;
 		test = new romanNumeral(System.in, System.out);
-		String outputValue = test.getTens(inputValue);
+		String outputValue = test.getOnes(inputValue);
 		assertEquals("V", outputValue);
 	}
 	
 	@Test
-	public void testTens6() {
+	public void testOnes6() {
 		int inputValue = 6;
 		test = new romanNumeral(System.in, System.out);
-		String outputValue = test.getTens(inputValue);
+		String outputValue = test.getOnes(inputValue);
 		assertEquals("VI", outputValue);
 	}
 	
 	@Test
-	public void testTens7() {
+	public void testOnes7() {
 		int inputValue = 7;
 		test = new romanNumeral(System.in, System.out);
-		String outputValue = test.getTens(inputValue);
+		String outputValue = test.getOnes(inputValue);
 		assertEquals("VII", outputValue);
 	}
 	
 	@Test
-	public void testTens8() {
+	public void testOnes8() {
 		int inputValue = 8;
 		test = new romanNumeral(System.in, System.out);
-		String outputValue = test.getTens(inputValue);
+		String outputValue = test.getOnes(inputValue);
 		assertEquals("VIII", outputValue);
 	}
 	
 	@Test
-	public void testTens9() {
+	public void testOnes9() {
 		int inputValue = 9;
 		test = new romanNumeral(System.in, System.out);
-		String outputValue = test.getTens(inputValue);
+		String outputValue = test.getOnes(inputValue);
 		assertEquals("IX", outputValue);
 	}
-	
 	
 	//Tests for full number converter function:
 	@Test
