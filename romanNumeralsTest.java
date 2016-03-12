@@ -251,8 +251,24 @@ public class romanNumeralsTest {
 	}
 	
 	@Test
+	public void testRomanNumeralEquivalent850() {
+		int inputValue = 850; // Tests C on right of D and L on right of C
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.romanNumeralEquivalent(inputValue);
+		assertEquals("DCCCL", outputValue);
+	}
+	
+	@Test
+	public void testRomanNumeralEquivalent1145() {
+		int inputValue = 1145; // Tests C on right of M, X on left of C and V on right of L
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.romanNumeralEquivalent(inputValue);
+		assertEquals("MCXLV", outputValue);
+	}
+	
+	@Test
 	public void testRomanNumeralEquivalent3999() {
-		int inputValue = 3999;
+		int inputValue = 3999; // Tests C on left of M, X and I on left of C
 		test = new romanNumeral(System.in, System.out);
 		String outputValue = test.romanNumeralEquivalent(inputValue);
 		assertEquals("MMMCMXCIX", outputValue);
@@ -260,15 +276,15 @@ public class romanNumeralsTest {
 	
 	@Test
 	public void testRomanNumeralEquivalent3554() {
-		int inputValue = 3554;
+		int inputValue = 3556; // Tests D on right of M, L on right of D and I on right of V
 		test = new romanNumeral(System.in, System.out);
 		String outputValue = test.romanNumeralEquivalent(inputValue);
-		assertEquals("MMMDLIV", outputValue);
+		assertEquals("MMMDLVI", outputValue);
 	}
 	
 	@Test
 	public void testRomanNumeralEquivalent2449() {
-		int inputValue = 2449;
+		int inputValue = 2449; // Tests C on left of D, X on left of L, I on left of X
 		test = new romanNumeral(System.in, System.out);
 		String outputValue = test.romanNumeralEquivalent(inputValue);
 		assertEquals("MMCDXLIX", outputValue);
@@ -276,7 +292,7 @@ public class romanNumeralsTest {
 	
 	@Test
 	public void testRomanNumeralEquivalent1965() {
-		int inputValue = 1965;
+		int inputValue = 1965; // Tests C on left of M, L on left of X and V on right of X
 		test = new romanNumeral(System.in, System.out);
 		String outputValue = test.romanNumeralEquivalent(inputValue);
 		assertEquals("MCMLXV", outputValue);
