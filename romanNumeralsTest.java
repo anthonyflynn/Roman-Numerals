@@ -216,6 +216,86 @@ public class romanNumeralsTest {
 		assertEquals("IX", outputValue);
 	}
 	
+	@Test
+	public void testTens0() {
+		int inputValue = 0;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getTens(inputValue);
+		assertEquals("", outputValue);
+	}
+	
+	@Test
+	public void testTens1() {
+		int inputValue = 1;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getTens(inputValue);
+		assertEquals("X", outputValue);
+	}
+	
+	@Test
+	public void testTens2() {
+		int inputValue = 2;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getTens(inputValue);
+		assertEquals("XX", outputValue);
+	}
+	
+	@Test
+	public void testTens3() {
+		int inputValue = 3;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getTens(inputValue);
+		assertEquals("XXX", outputValue);
+	}
+	
+	@Test
+	public void testTens4() {
+		int inputValue = 4;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getTens(inputValue);
+		assertEquals("XL", outputValue);
+	}
+	
+	@Test
+	public void testTens5() {
+		int inputValue = 5;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getTens(inputValue);
+		assertEquals("L", outputValue);
+	}
+	
+	@Test
+	public void testTens6() {
+		int inputValue = 6;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getTens(inputValue);
+		assertEquals("LX", outputValue);
+	}
+	
+	@Test
+	public void testTens7() {
+		int inputValue = 7;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getTens(inputValue);
+		assertEquals("LXX", outputValue);
+	}
+	
+	@Test
+	public void testTens8() {
+		int inputValue = 8;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getTens(inputValue);
+		assertEquals("LXXX", outputValue);
+	}
+	
+	@Test
+	public void testTens9() {
+		int inputValue = 9;
+		test = new romanNumeral(System.in, System.out);
+		String outputValue = test.getTens(inputValue);
+		assertEquals("XC", outputValue);
+	}
+	
 	//Tests for full number converter function:
 	@Test
 	public void testRomanNumeralEquivalent1() {
