@@ -63,7 +63,23 @@ public class romanNumeral {
 	
 	/* Stub to be completed later once get functions written */
 	public String romanNumeralEquivalent(int inputValue) {
-		return "";
+		String romanNumeral = "";
+		int unit = 0;
+		
+		unit = inputValue / 1000;
+		inputValue = inputValue % 1000;
+		romanNumeral += getThousands(unit);
+		
+		unit = inputValue / 100;
+		inputValue = inputValue % 100;
+		romanNumeral += getHundreds(unit);
+		
+		unit = inputValue / 10;
+		inputValue = inputValue % 10;
+		romanNumeral += getTens(unit);
+		romanNumeral += getOnes(inputValue);
+		
+		return romanNumeral;
 	}
 	
 	/* Function to return the value in the single units column of input*/
