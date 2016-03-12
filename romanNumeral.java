@@ -61,5 +61,28 @@ public class romanNumeral {
 		return inputValue;
 	}
 	
+	/* Stub to be completed later once get functions written */
+	public String romanNumeralEquivalent(int inputValue) {
+		return "";
+	}
+	
+	public String getOnes(int inputValue) {
+		switch(inputValue) {
+		case 0: return "";
+		case 1: return "I";
+		case 2:	return "II";
+		case 3:	return "III";
+		case 4:	return "IV";
+		case 5: return "V";
+		case 6: return "VI";
+		case 7: return "VII";
+		case 8: return "VIII";
+		case 9:	return "IX";
+		default:
+			out.println("Error in tens function.  Exiting.");
+			System.exit(-1);
+			return "";
+		}
+	}
 
 }
