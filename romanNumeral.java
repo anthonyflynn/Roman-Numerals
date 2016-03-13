@@ -107,20 +107,16 @@ public class romanNumeral {
 	/* Method converts inputValue to its roman numeral equivalent and assigns
 	 * this to the string romanNumeral*/
 	public String romanNumeralEquivalent(int inputValue) {
-		int unit = 0;
+		romanNumeral = getOnes(inputValue % 10) + romanNumeral; // adds units part
+		inputValue = inputValue / 10;
 		
-		unit = inputValue / 1000;
-		inputValue = inputValue % 1000;
-		romanNumeral += getThousands(unit); // adds thousands part
+		romanNumeral = getTens(inputValue % 10) + romanNumeral; // adds tens part
+		inputValue = inputValue / 10;
 		
-		unit = inputValue / 100;
-		inputValue = inputValue % 100;
-		romanNumeral += getHundreds(unit); // adds hundreds part
+		romanNumeral = getHundreds(inputValue % 10) + romanNumeral; // adds hundreds part
+		inputValue = inputValue / 10;
 		
-		unit = inputValue / 10;
-		inputValue = inputValue % 10;
-		romanNumeral += getTens(unit); // adds tens part
-		romanNumeral += getOnes(inputValue); // remainder is units part
+		romanNumeral = getThousands(inputValue % 10) + romanNumeral; // adds thousands part
 		
 		return romanNumeral;
 	}
