@@ -5,8 +5,6 @@ import static org.junit.Assert.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
-import org.junit.Before;
 import org.junit.Test;
 
 public class romanNumeralsTest {

@@ -25,7 +25,9 @@ public class romanNumeral {
 			if(!this.input()) { // false when user types -1 (to exit program)
 				break;
 			}
-			this.romanNumeralEquivalent(this.inputValue);
+			
+			this.romanNumeralEquivalent(this.inputValue); // do conversion
+			
 			if(!this.output()) { // false when user do not have another value to convert
 				break;
 			}
@@ -83,18 +85,18 @@ public class romanNumeral {
 			out.println("Would you like to convert another value? (y/n)");
 			String repeat = scanner.next();
 			if(repeat.charAt(0) == 'y' || repeat.charAt(0) == 'Y') {
-				inputValue = Integer.MAX_VALUE;
-				romanNumeral = "";
-				return true;
+				inputValue = Integer.MAX_VALUE; // reset inputValue
+				romanNumeral = ""; // Empty romanNumeral
+				return true; // Ask user for another input number
 			}
 			else if(repeat.charAt(0) == 'n' || repeat.charAt(0) == 'N') {
-				out.println("Exiting program.");
+				out.println("Exiting program."); // No more values to convert
 			}
 			else {
 				out.println("Command not understood, exiting program.");
 			}
 		} catch(Exception e) {
-			out.println("Command not understood, exiting program.");	
+			out.println("Error: " + e);
 		}	
 		return false;
 	}
@@ -108,13 +110,13 @@ public class romanNumeral {
 	 * this to the string romanNumeral*/
 	public String romanNumeralEquivalent(int inputValue) {
 		romanNumeral = getOnes(inputValue % 10) + romanNumeral; // adds units part
-		inputValue = inputValue / 10;
+		inputValue /= 10;
 		
 		romanNumeral = getTens(inputValue % 10) + romanNumeral; // adds tens part
-		inputValue = inputValue / 10;
+		inputValue /= 10;
 		
 		romanNumeral = getHundreds(inputValue % 10) + romanNumeral; // adds hundreds part
-		inputValue = inputValue / 10;
+		inputValue /= 10;
 		
 		romanNumeral = getThousands(inputValue % 10) + romanNumeral; // adds thousands part
 		
@@ -125,7 +127,7 @@ public class romanNumeral {
 	 * string and returns this string.  The parameters oneUnit, fiveUnit and tenUnit
 	 * depend on whether inputValue is the units, tens or hundreds column of number
 	 * being converted (e.g. for tens, the values are X(10), L(50) and C(100) respectively.*/
-	public String getDigitEquivalent(int inputValue, String oneUnit, String fiveUnit, String tenUnit) {
+	private String getDigitEquivalent(int inputValue, String oneUnit, String fiveUnit, String tenUnit) {
 		switch(inputValue) {
 		case 0: return "";
 		case 1: return oneUnit;
