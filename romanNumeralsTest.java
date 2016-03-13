@@ -3,6 +3,8 @@ package roman_numerals;
 import static org.junit.Assert.*;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +12,7 @@ import org.junit.Test;
 public class romanNumeralsTest {
 	private romanNumeral test;
 	private ByteArrayInputStream in;
+	private ByteArrayOutputStream outContent;
 	
 	//Unit tests for function input()
 	@Test
@@ -43,7 +46,7 @@ public class romanNumeralsTest {
 		assertTrue(valid);
 	}
 	
-	@Test
+	//@Test
 	public void testInput987() {
 		in = new ByteArrayInputStream("987".getBytes());
 		System.setIn(in);
@@ -417,7 +420,6 @@ public class romanNumeralsTest {
 		assertEquals("MMM", outputValue);
 	}
 		
-		
 	//Tests for full number converter function:
 	
 	@Test
@@ -499,4 +501,87 @@ public class romanNumeralsTest {
 		String outputValue = test.romanNumeralEquivalent(inputValue);
 		assertEquals("MCMLXV", outputValue);
 	}
+	
+	@Test
+	public void testOutput() { // simulates output from full run of program
+		in = new ByteArrayInputStream("1645\nn".getBytes());
+		System.setIn(in); 
+		outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		test = new romanNumeral(System.in, System.out);
+		test.run();
+		
+		assertEquals("Please enter an integer between 1 and 3,999 to be"
+				+ " converted into a roman numeral, or '-1' to exit:\n"
+				+ "Value entered: 1645\n"
+				+ "The equivalent value in Roman Numerals is: MDCXLV\n"
+				+ "Would you like to convert another value? (y/n)\n"
+				+ "Exiting program.\n", outContent.toString());
+	}
+	
+	@Test
+	public void testOutput2() {
+		in = new ByteArrayInputStream("-1\nn".getBytes());
+		System.setIn(in); 
+		outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		test = new romanNumeral(System.in, System.out);
+		test.run();
+		
+		assertEquals("Please enter an integer between 1 and 3,999 to be"
+				+ " converted into a roman numeral, or '-1' to exit:\n"
+				+ "Exiting program.\n", outContent.toString());
+	}
+	
+	@Test
+	public void testOutput3() {
+		in = new ByteArrayInputStream("956\ny\n2654\nn".getBytes());
+		System.setIn(in); 
+		outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		test = new romanNumeral(System.in, System.out);
+		test.run();
+		
+		assertEquals("Please enter an integer between 1 and 3,999 to be"
+				+ " converted into a roman numeral, or '-1' to exit:\n"
+				+ "Value entered: 956\n"
+				+ "The equivalent value in Roman Numerals is: CMLVI\n"
+				+ "Would you like to convert another value? (y/n)\n"
+				+ "Please enter an integer between 1 and 3,999 to be"
+				+ " converted into a roman numeral, or '-1' to exit:\n"
+				+ "Value entered: 2654\n"
+				+ "The equivalent value in Roman Numerals is: MMDCLIV\n"
+				+ "Would you like to convert another value? (y/n)\n"
+				+ "Exiting program.\n", outContent.toString());
+	}
+	
+	@Test
+	public void testOutput4() {
+		in = new ByteArrayInputStream("25342\n123\ny\n1111\ny\n737\nn".getBytes());
+		System.setIn(in); 
+		outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		test = new romanNumeral(System.in, System.out);
+		test.run();
+		
+		assertEquals("Please enter an integer between 1 and 3,999 to be"
+				+ " converted into a roman numeral, or '-1' to exit:\n"
+				+ "Output not valid. Please try again or enter '-1' to exit:\n"
+				+ "Value entered: 123\n"
+				+ "The equivalent value in Roman Numerals is: CXXIII\n"
+				+ "Would you like to convert another value? (y/n)\n"
+				+ "Please enter an integer between 1 and 3,999 to be"
+				+ " converted into a roman numeral, or '-1' to exit:\n"
+				+ "Value entered: 1111\n"
+				+ "The equivalent value in Roman Numerals is: MCXI\n"
+				+ "Would you like to convert another value? (y/n)\n"
+				+ "Please enter an integer between 1 and 3,999 to be"
+				+ " converted into a roman numeral, or '-1' to exit:\n"
+				+ "Value entered: 737\n"
+				+ "The equivalent value in Roman Numerals is: DCCXXXVII\n"
+				+ "Would you like to convert another value? (y/n)\n"
+				+ "Exiting program.\n", outContent.toString());
+	}
+	
+	
 }
