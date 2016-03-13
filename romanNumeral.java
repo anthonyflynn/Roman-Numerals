@@ -9,14 +9,14 @@ public class romanNumeral {
 	private final Scanner scanner;
 	private final PrintStream out;
 	private int inputValue;
-	private String romanNumeral;
+	private String romanNumeralValue;
 	
 	/* Constructor to initialise parameter values */
 	public romanNumeral(InputStream in, PrintStream out) {
 		scanner = new Scanner(in);
 		this.out = out;
 		inputValue = Integer.MAX_VALUE; // to determine if valid value entered
-		romanNumeral = "";
+		romanNumeralValue = "";
 	}
 	
 	/* Method to run the converter */
@@ -79,14 +79,14 @@ public class romanNumeral {
 	/* Method outputs the roman numeral equivalent of input integer.  If user would like
 	 * to convert another integer, method returns true.  Otherwise, false.*/
 	public boolean output() {
-		out.println("The equivalent value in Roman Numerals is: " + romanNumeral);
+		out.println("The equivalent value in Roman Numerals is: " + romanNumeralValue);
 		
 		try {
 			out.println("Would you like to convert another value? (y/n)");
 			String repeat = scanner.next();
 			if(repeat.charAt(0) == 'y' || repeat.charAt(0) == 'Y') {
 				inputValue = Integer.MAX_VALUE; // reset inputValue
-				romanNumeral = ""; // Empty romanNumeral
+				romanNumeralValue = ""; // Empty romanNumeral
 				return true; // Ask user for another input number
 			}
 			else if(repeat.charAt(0) == 'n' || repeat.charAt(0) == 'N') {
@@ -109,18 +109,18 @@ public class romanNumeral {
 	/* Method converts inputValue to its roman numeral equivalent and assigns
 	 * this to the string romanNumeral*/
 	public String romanNumeralEquivalent(int inputValue) {
-		romanNumeral = getOnes(inputValue % 10) + romanNumeral; // adds units part
+		romanNumeralValue = getOnes(inputValue % 10) + romanNumeralValue; // adds units part
 		inputValue /= 10;
 		
-		romanNumeral = getTens(inputValue % 10) + romanNumeral; // adds tens part
+		romanNumeralValue = getTens(inputValue % 10) + romanNumeralValue; // adds tens part
 		inputValue /= 10;
 		
-		romanNumeral = getHundreds(inputValue % 10) + romanNumeral; // adds hundreds part
+		romanNumeralValue = getHundreds(inputValue % 10) + romanNumeralValue; // adds hundreds part
 		inputValue /= 10;
 		
-		romanNumeral = getThousands(inputValue % 10) + romanNumeral; // adds thousands part
+		romanNumeralValue = getThousands(inputValue % 10) + romanNumeralValue; // adds thousands part
 		
-		return romanNumeral;
+		return romanNumeralValue;
 	}
 	
 	/* Method converts the integer inputValue into an equivalent roman numeral
