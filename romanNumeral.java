@@ -125,64 +125,42 @@ public class romanNumeral {
 		return romanNumeral;
 	}
 	
-	/* Method to return the value in the single units column of input*/
-	public String getOnes(int inputValue) {
+	/* Method converts the integer inputValue into an equivalent roman numeral
+	 * string and returns this string.  The parameters oneUnit, fiveUnit and tenUnit
+	 * depend on whether inputValue is the units, tens or hundreds column of number
+	 * being converted (e.g. for tens, the values are X(10), L(50) and C(100) respectively.*/
+	public String getDigitEquivalent(int inputValue, String oneUnit, String fiveUnit, String tenUnit) {
 		switch(inputValue) {
 		case 0: return "";
-		case 1: return "I";
-		case 2:	return "II";
-		case 3:	return "III";
-		case 4:	return "IV";
-		case 5: return "V";
-		case 6: return "VI";
-		case 7: return "VII";
-		case 8: return "VIII";
-		case 9:	return "IX";
+		case 1: return oneUnit;
+		case 2:	return oneUnit + oneUnit;
+		case 3:	return oneUnit + oneUnit + oneUnit;
+		case 4:	return oneUnit + fiveUnit;
+		case 5: return fiveUnit;
+		case 6: return fiveUnit + oneUnit;
+		case 7: return fiveUnit + oneUnit + oneUnit;
+		case 8: return fiveUnit + oneUnit + oneUnit + oneUnit;
+		case 9:	return oneUnit + tenUnit;
 		default:
-			out.println("Error in ones function.  Exiting.");
+			out.println("Invalid digit called during conversion.  Exiting.");
 			System.exit(-1);
 			return "";
 		}
+	}
+	
+	/* Method to return the value in the ones units column of input*/
+	public String getOnes(int inputValue) {
+		return getDigitEquivalent(inputValue, "I", "V", "X");
 	}
 	
 	/* Method to return the value in the tens units column of input*/
 	public String getTens(int inputValue) {
-		switch(inputValue) {
-		case 0: return "";
-		case 1: return "X";
-		case 2:	return "XX";
-		case 3:	return "XXX";
-		case 4:	return "XL";
-		case 5: return "L";
-		case 6: return "LX";
-		case 7: return "LXX";
-		case 8: return "LXXX";
-		case 9:	return "XC";
-		default:
-			out.println("Error in tens function.  Exiting.");
-			System.exit(-1);
-			return "";
-		}
+		return getDigitEquivalent(inputValue, "X", "L", "C");
 	}
 	
 	/* Method to return the value in the hundreds units column of input*/
 	public String getHundreds(int inputValue) {
-		switch(inputValue) {
-		case 0: return "";
-		case 1: return "C";
-		case 2:	return "CC";
-		case 3:	return "CCC";
-		case 4:	return "CD";
-		case 5: return "D";
-		case 6: return "DC";
-		case 7: return "DCC";
-		case 8: return "DCCC";
-		case 9:	return "CM";
-		default:
-			out.println("Error in hundreds function.  Exiting.");
-			System.exit(-1);
-			return "";
-		}
+		return getDigitEquivalent(inputValue, "C", "D", "M");
 	}
 	
 	/* Method to return the value in the thousands units column of input*/
