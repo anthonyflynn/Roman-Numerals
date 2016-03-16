@@ -5,14 +5,14 @@ import java.io.PrintStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class romanNumeral {
+public class RomanNumeral {
 	private final Scanner scanner;
 	private final PrintStream out;
 	private int inputValue;
 	private String romanNumeralValue;
 	
 	/* Constructor to initialise parameter values */
-	public romanNumeral(InputStream in, PrintStream out) {
+	public RomanNumeral(InputStream in, PrintStream out) {
 		scanner = new Scanner(in);
 		this.out = out;
 		inputValue = Integer.MAX_VALUE; // to determine if valid value entered
@@ -39,7 +39,7 @@ public class romanNumeral {
 	
 	/* Main method */
 	public static void main(String[] args) {
-		romanNumeral example = new romanNumeral(System.in, System.out);
+		RomanNumeral example = new RomanNumeral(System.in, System.out);
 		example.run(); // start the romanNumeral converter object
 	}
 	
